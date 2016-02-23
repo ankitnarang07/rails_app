@@ -1,0 +1,44 @@
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+		<% if user_signed_in? &&  @post.user_id == current_user.id %>
+			<%= link_to 'Edit' , edit_post_path(@post)%>
+		<% end %>
+		
+		<h1><%= @post.title %></h1>
+		<p><%= @post.description %></p>
+		<p>
+			<% if @post.user %>
+			<b>Author :</b> <%= @post.user.name %>,
+			<% end %>  <b>Published on :</b> <%= @post.created_at %></p>
+	
+			<div class="comments">
+				<% if @post.comments.any? %>	
+					<% @post.comments.each do |c|%>
+						<p><%= c.comment %><span> By: <%= c.name %></span></p>
+					<% end %>
+				<% end %>
+				<h3>Add comment</h3>
+				
+				<%= form_for ([@post, @post.comments.build]) do |f| %>
+			  		<div class="field">
+			    		<%= f.label :name %>
+			    		<%= f.text_field :name, autofocus: true %>
+				  	</div>
+	
+			  		<div class="field">
+			  	 		<%= f.label :email %>
+			  	  		<%= f.text_field :email, autocomplete: "off" %>
+			  		</div>
+			
+				  	<div class="field">
+				  	  <%= f.label :comment %>
+				  	  <%= f.text_area :comment %>
+				  	</div>
+				  	<div class="actions">
+				  	  <%= f.submit "Save Comment" %>
+			  		</div>
+				<% end %>
+		</div>
+
+</div>

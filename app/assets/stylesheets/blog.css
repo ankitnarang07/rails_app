@@ -1,0 +1,28 @@
+.intro-header .site-heading, .intro-header .post-heading, .intro-header .page-heading{padding: 100px 0 50px;}
+body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
+#error_explanation h2{display: none;}
+#error_explanation > ul { padding: 0; }
+#error_explanation li { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; color: #D21000; font-size: 14px; list-style: none outside none;}
+.field,.actions{width:100%; float: left;}
+.field label{width:35%; float:left;}
+.field textarea , .field input{width:65%; float:left;}
+.field em{font-size: 12px; float: left;}
+.actions input[type="checkbox"] {
+    float: left;
+    margin: 10px;
+    width: auto;
+}
+.actions input{width: auto;float: left;}
+.remember-me{ width: auto; float: right;}
+.alert-notice{
+	background-color: #D9EDF7;
+    border-color: #BCE8F1;
+    color: #31708F;
+
+}
+.alert-alert{
+
+	background-color: #F2DEDE;
+    border-color: #EBCCD1;
+    color: #A94442;
+}

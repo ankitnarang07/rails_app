@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
+  <%= stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' %>
+  <%= stylesheet_link_tag   'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+</head>
+<body>
+<%= render 'layouts/header' %>
+<div class="container">
+	<%if flash.each.any? %>
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+    <%end%>
+	<%= yield %>
+</div>
+<%= render 'layouts/footer' %>
+</body>
+</html>
